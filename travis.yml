@@ -1,6 +1,6 @@
 #On se met en sudo
 sudo: required
-language: generic
+
 #On dit a travis qu on a besoin de docker
 services:
   - docker
