@@ -8,6 +8,6 @@ services:
 before_install:
   - docker build -t damsnda/docker-react -f Dockerfile.dev .
 
-#-- --coverage just for exit on a le coverage 
+#-- --coverage just for exit on a le coverage  
 script:
   - docker run -e CI=true damsnda/docker-react npm run test -- --coverage
