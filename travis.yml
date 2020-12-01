@@ -1,7 +1,7 @@
 #On se met en sudo
 sudo: required
 
-#On dit a travis qu on a besoin de docker
+#On dit a travis qu on a besoin de dockerd
 services:
   - docker
 
