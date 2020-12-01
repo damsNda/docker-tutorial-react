@@ -1,0 +1,25 @@
+version: '3'
+services: 
+ web:
+   stdin_open: true
+   #Specification d un context parce que on a un fichier different
+   build:
+    context: .
+    dockerfile: Dockerfile.dev
+   ports:
+    - "8080:3000"
+   volumes:
+    - /app/node_modules
+    - .:/app
+  
+ tests:
+   stdin_open: true
+   #Specification d un context parce que on a un fichier different
+   build:
+    context: .
+    dockerfile: Dockerfile.dev
+   volumes:
+    - /app/node_modules
+    - .:/app
+   #We overwrite the starting command
+   command: ["npm","run","test"]
