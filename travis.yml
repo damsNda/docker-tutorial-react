@@ -10,4 +10,4 @@ before_install:
 
 #-- --coverage just for exit on a le coverage
 script:
-  - docker run  damsnda/docker-react npm run test -- --coverage
+  - docker run -e CI=true damsnda/docker-react npm run test -- --coverage
