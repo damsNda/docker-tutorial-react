@@ -11,3 +11,12 @@ before_install:
 #-- --coverage just for exit on a le coverage  
 script:
   - docker run -e CI=true damsnda/docker-react npm run test -- --coverage
+deploy:
+  provider: elasticbeanstalk
+  region: 'eu-west-3'
+  app: 'docker-react'
+  env: 'DockerReact-env'
+  bucket_name: 'elasticbeanstalk-eu-west-3-850514798169'
+  bucket_path: 'docker-react'
+  on:
+    branch: main
